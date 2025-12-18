@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中铁铁工城市建设有限公司反"三违"安全知识问答</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            background-image: linear-gradient(to bottom, #f0f5ff 0%, #ffffff 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 10px 20px rgba(183, 28, 28, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M20,20 L80,20 L80,80 L20,80 Z" stroke="white" stroke-width="2" fill="none" stroke-opacity="0.1"/><path d="M30,30 L70,30 L70,70 L30,70 Z" stroke="white" stroke-width="1" fill="none" stroke-opacity="0.05"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .company-name {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: #ffcc00;
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .header-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ffcc00;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .sanwei-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 15px;
+        }
+        
+        .sanwei-item {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        
+        .sanwei-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #ffcc00;
+        }
+        
+        .sanwei-item p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .progress-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .progress-info {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .progress-info h3 {
+            color: #d32f2f;
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+        
+        .progress-bar {
+            height: 12px;
+            background-color: #e9ecef;
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 15px 0;
+            flex: 1;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, #d32f2f, #f44336);
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 6px;
+        }
+        
+        .score-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            min-width: 150px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .score-container h3 {
+            color: #d32f2f;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .score-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+        
+        .quiz-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            display: none;
+        }
+        
+        .quiz-container.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .question-number {
+            display: inline-block;
+            background-color: #d32f2f;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .question-text {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .option {
+            padding: 18px 20px;
+            background-color: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .option:hover {
+            background-color: #ffeaea;
+            border-color: #d32f2f;
+            transform: translateY(-2px);
+        }
+        
+        .option.selected {
+            background-color: #ffebee;
+            border-color: #d32f2f;
+            color: #d32f2f;
+            font-weight: bold;
+        }
+        
+        .option.correct {
+            background-color: #e8f5e9;
+            border-color: #4CAF50;
+            color: #2e7d32;
+        }
+        
+        .option.incorrect {
+            background-color: #ffebee;
+            border-color: #f44336;
+            color: #c62828;
+        }
+        
+        .option-letter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background-color: #e9ecef;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .option.selected .option-letter {
+            background-color: #d32f2f;
+            color: white;
+        }
+        
+        .option.correct .option-letter {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .option.incorrect .option-letter {
+            background-color: #f44336;
+            color: white;
+        }
+        
+        .explanation {
+            background-color: #f9f9f9;
+            border-left: 4px solid #d32f2f;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 25px;
+            display: none;
+        }
+        
+        .explanation.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .explanation h4 {
+            color: #d32f2f;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background-color: #d32f2f;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #b71c1c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(183, 28, 28, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #545b62;
+            transform: translateY(-2px);
+        }
+        
+        .btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .start-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+        
+        .start-container h2 {
+            color: #d32f2f;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .start-container p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #666;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .sanwei-summary {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .sanwei-summary h3 {
+            color: #d32f2f;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .summary-item {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #d32f2f;
+        }
+        
+        .summary-item h4 {
+            color: #d32f2f;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .result-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            display: none;
+        }
+        
+        .result-container.show {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+        
+        .result-icon {
+            font-size: 5rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .result-title {
+            font-size: 2.5rem;
+            color: #d32f2f;
+            margin-bottom: 15px;
+        }
+        
+        .result-score {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #d32f2f;
+            margin: 20px 0;
+        }
+        
+        .result-message {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #666;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .result-details {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        
+        .result-details h4 {
+            color: #d32f2f;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .company-name {
+                font-size: 1.1rem;
+            }
+            
+            .question-text {
+                font-size: 1.2rem;
+            }
+            
+            .option {
+                padding: 15px;
+                font-size: 1rem;
+            }
+            
+            .buttons-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .progress-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .score-container {
+                width: 100%;
+            }
+            
+            .sanwei-info {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 15px;
+            }
+            
+            .quiz-container, .start-container, .result-container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem;
+            }
+            
+            .question-text {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-icon">
+                <i class="fas fa-hard-hat"></i>
+            </div>
+            <div class="company-name">中铁铁工城市建设有限公司</div>
+            <h1>反"三违"安全知识问答</h1>
+            <p>增强安全意识，杜绝违章指挥、违章作业、违反劳动纪律，筑牢安全生产防线</p>
+            
+            <div class="sanwei-info">
+                <div class="sanwei-item">
+                    <h3><i class="fas fa-ban"></i> 违章指挥</h3>
+                    <p>违反安全生产方针、政策、法令、条例、规程、制度和有关规定指挥生产的行为</p>
+                </div>
+                <div class="sanwei-item">
+                    <h3><i class="fas fa-exclamation-triangle"></i> 违章作业</h3>
+                    <p>违反安全操作规程，不按安全规章制度进行作业、施工、操作的行为</p>
+                </div>
+                <div class="sanwei-item">
+                    <h3><i class="fas fa-user-slash"></i> 违反劳动纪律</h3>
+                    <p>违反劳动生产或工作纪律，影响正常生产秩序和工作秩序的行为</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-info">
+                <h3>反"三违"知识测试进度</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div id="progressText">0/30 已完成</div>
+            </div>
+            <div class="score-container">
+                <h3>当前得分</h3>
+                <div class="score-value" id="currentScore">0</div>
+            </div>
+        </div>
+        
+        <div class="start-container" id="startContainer">
+            <h2>反"三违"安全知识测试</h2>
+            <p>本测试包含30道关于反"三违"（违章指挥、违章作业、违反劳动纪律）的选择题，旨在增强全体员工安全意识，杜绝违规行为，确保施工安全。完成测试后，您将获得安全知识水平评估和详细解析。</p>
+            <button class="btn btn-primary" id="startBtn">
+                <i class="fas fa-play-circle"></i> 开始测试
+            </button>
+        </div>
+        
+        <div class="quiz-container" id="quizContainer">
+            <div class="question-number" id="questionNumber">问题 1/30</div>
+            <div class="question-text" id="questionText"></div>
+            
+            <div class="options-container" id="optionsContainer">
+                <!-- 选项将通过JavaScript动态生成 -->
+            </div>
+            
+            <div class="explanation" id="explanation">
+                <h4><i class="fas fa-lightbulb"></i> 安全知识解析</h4>
+                <p id="explanationText"></p>
+            </div>
+            
+            <div class="buttons-container">
+                <button class="btn btn-secondary" id="prevBtn" disabled>
+                    <i class="fas fa-arrow-left"></i> 上一题
+                </button>
+                <button class="btn btn-primary" id="nextBtn">
+                    下一题 <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="btn btn-primary" id="submitBtn" style="display: none;">
+                    <i class="fas fa-paper-plane"></i> 提交答案
+                </button>
+            </div>
+        </div>
+        
+        <div class="result-container" id="resultContainer">
+            <div class="result-icon">
+                <i class="fas fa-medal"></i>
+            </div>
+            <h2 class="result-title">测试完成！</h2>
+            <div class="result-score" id="finalScore">0</div>
+            <p class="result-message" id="resultMessage"></p>
+            
+            <div class="result-details">
+                <h4><i class="fas fa-chart-bar"></i> 测试结果分析</h4>
+                <div class="detail-item">
+                    <span>总题数：</span>
+                    <span>30 题</span>
+                </div>
+                <div class="detail-item">
+                    <span>答对题数：</span>
+                    <span id="correctCount">0 题</span>
+                </div>
+                <div class="detail-item">
+                    <span>答错题数：</span>
+                    <span id="wrongCount">0 题</span>
+                </div>
+                <div class="detail-item">
+                    <span>正确率：</span>
+                    <span id="accuracyRate">0%</span>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary" id="restartBtn" style="margin-top: 30px;">
+                <i class="fas fa-redo"></i> 重新测试
+            </button>
+        </div>
+        
+        <div class="sanwei-summary">
+            <h3><i class="fas fa-exclamation-circle"></i> 反"三违"安全要点</h3>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <h4>杜绝违章指挥</h4>
+                    <p>1. 严禁强令员工冒险作业<br>2. 严禁不按方案组织施工<br>3. 严禁使用不合格安全设施<br>4. 严禁擅自变更安全技术措施</p>
+                </div>
+                <div class="summary-item">
+                    <h4>杜绝违章作业</h4>
+                    <p>1. 严格执行安全操作规程<br>2. 正确使用个人防护用品<br>3. 特种作业必须持证上岗<br>4. 遵守危险作业审批制度</p>
+                </div>
+                <div class="summary-item">
+                    <h4>杜绝违反劳动纪律</h4>
+                    <p>1. 遵守岗位安全责任制<br>2. 遵守现场考勤管理制度<br>3. 严禁酒后上岗作业<br>4. 保持作业现场整洁有序</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 中铁铁工城市建设有限公司 | 反"三违"安全知识问答 | 安全生产，预防为主，综合治理</p>
+        </div>
+    </div>
+
+    <script>
+        // 反"三违"安全知识题库（30道题）
+        const questions = [
+            {
+                question: "下列哪种行为属于典型的违章指挥？",
+                options: [
+                    "强令员工冒险进入危险区域作业",
+                    "提醒员工注意安全防护",
+                    "组织员工学习安全规程",
+                    "检查安全设施是否完好"
+                ],
+                correctAnswer: 0,
+                explanation: "强令员工冒险进入危险区域作业是典型的违章指挥行为，违反了安全生产方针和规定，直接威胁员工生命安全。"
+            },
+            {
+                question: "以下哪种情况属于违章作业？",
+                options: [
+                    "未系安全带进行高空作业",
+                    "按照操作规程使用机械设备",
+                    "正确佩戴安全帽进入施工现场",
+                    "参加班前安全教育活动"
+                ],
+                correctAnswer: 0,
+                explanation: "未系安全带进行高空作业是典型的违章作业行为，严重违反安全操作规程，极易导致高处坠落事故。"
+            },
+            {
+                question: "下列行为中，哪项属于违反劳动纪律？",
+                options: [
+                    "工作时间擅自离岗、串岗",
+                    "按照要求参加安全培训",
+                    "遵守交接班制度",
+                    "正确穿戴劳动防护用品"
+                ],
+                correctAnswer: 0,
+                explanation: "工作时间擅自离岗、串岗属于违反劳动纪律行为，影响正常生产秩序，可能造成安全隐患。"
+            },
+            {
+                question: "在施工现场，管理人员发现存在重大安全隐患，但为了赶工期仍要求继续施工，这种行为属于？",
+                options: [
+                    "违章指挥",
+                    "合理调度",
+                    "正常管理",
+                    "效率优先"
+                ],
+                correctAnswer: 0,
+                explanation: "在存在重大安全隐患的情况下仍要求继续施工，属于严重的违章指挥行为，违反了\"安全第一\"的生产原则。"
+            },
+            {
+                question: "特种作业人员未持有效操作证上岗作业，这种行为属于？",
+                options: [
+                    "违章作业",
+                    "合法作业",
+                    "正常作业",
+                    "临时作业"
+                ],
+                correctAnswer: 0,
+                explanation: "特种作业人员必须持证上岗，未持有效操作证上岗属于违章作业，可能导致严重安全事故。"
+            },
+            {
+                question: "下列哪种行为不属于\"三违\"行为？",
+                options: [
+                    "按照操作规程进行动火作业",
+                    "无证操作起重设备",
+                    "酒后进入施工现场",
+                    "擅自拆除安全防护设施"
+                ],
+                correctAnswer: 0,
+                explanation: "按照操作规程进行动火作业是遵守安全规定的行为，不属于\"三违\"行为。其他选项都属于\"三违\"行为。"
+            },
+            {
+                question: "在未办理动火作业许可证的情况下进行焊接作业，属于？",
+                options: [
+                    "违章作业",
+                    "正常作业",
+                    "紧急作业",
+                    "临时作业"
+                ],
+                correctAnswer: 0,
+                explanation: "动火作业必须办理动火作业许可证，未办理许可证进行焊接作业属于违章作业，极易引发火灾事故。"
+            },
+            {
+                question: "管理人员在明知安全设施不完善的情况下，仍指挥员工进行作业，属于？",
+                options: [
+                    "违章指挥",
+                    "正常指挥",
+                    "合理指挥",
+                    "紧急指挥"
+                ],
+                correctAnswer: 0,
+                explanation: "在安全设施不完善的情况下指挥员工作业属于违章指挥，直接违反安全生产管理规定。"
+            },
+            {
+                question: "员工未经安全培训直接上岗作业，主要责任在于？",
+                options: [
+                    "违章指挥",
+                    "员工个人",
+                    "天气原因",
+                    "设备故障"
+                ],
+                correctAnswer: 0,
+                explanation: "员工未经安全培训直接上岗作业，主要责任在于管理人员的违章指挥，违反了\"先培训、后上岗\"的安全规定。"
+            },
+            {
+                question: "下列哪种情况属于违反劳动纪律？",
+                options: [
+                    "工作时间睡觉、玩手机",
+                    "按规定进行安全交底",
+                    "遵守安全操作规程",
+                    "正确使用劳动防护用品"
+                ],
+                correctAnswer: 0,
+                explanation: "工作时间睡觉、玩手机属于违反劳动纪律行为，影响工作效率和安全意识。"
+            },
+            {
+                question: "在未采取有效防护措施的情况下进行深基坑作业，属于？",
+                options: [
+                    "违章作业",
+                    "正常施工",
+                    "快速施工",
+                    "创新施工"
+                ],
+                correctAnswer: 0,
+                explanation: "深基坑作业必须采取有效的防护措施，未采取防护措施进行作业属于严重的违章作业行为。"
+            },
+            {
+                question: "管理人员要求员工超负荷连续工作，导致员工疲劳作业，属于？",
+                options: [
+                    "违章指挥",
+                    "合理安排",
+                    "提高效率",
+                    "正常管理"
+                ],
+                correctAnswer: 0,
+                explanation: "要求员工超负荷连续工作导致疲劳作业属于违章指挥，违反劳动保护规定，容易引发安全事故。"
+            },
+            {
+                question: "下列行为中，哪项不属于违章作业？",
+                options: [
+                    "按照作业指导书进行操作",
+                    "使用损坏的电动工具",
+                    "擅自操作非本岗位设备",
+                    "拆除设备安全防护装置"
+                ],
+                correctAnswer: 0,
+                explanation: "按照作业指导书进行操作是遵守安全规定的行为，不属于违章作业。其他选项都属于违章作业行为。"
+            },
+            {
+                question: "在未设置警戒区域的情况下进行吊装作业，主要责任属于？",
+                options: [
+                    "违章指挥",
+                    "天气原因",
+                    "设备原因",
+                    "围观人员"
+                ],
+                correctAnswer: 0,
+                explanation: "吊装作业必须设置警戒区域，未设置警戒区域就进行作业属于管理人员的违章指挥行为。"
+            },
+            {
+                question: "下列哪种行为属于违反劳动纪律？",
+                options: [
+                    "不按规定进行交接班",
+                    "积极参加安全活动",
+                    "正确报告安全隐患",
+                    "认真学习安全知识"
+                ],
+                correctAnswer: 0,
+                explanation: "不按规定进行交接班属于违反劳动纪律行为，可能导致工作衔接出现问题，引发安全隐患。"
+            },
+            {
+                question: "临时用电线路私拉乱接，未按规定敷设，属于？",
+                options: [
+                    "违章作业",
+                    "正常用电",
+                    "临时用电",
+                    "创新用电"
+                ],
+                correctAnswer: 0,
+                explanation: "临时用电线路必须按规定敷设，私拉乱接属于违章作业行为，容易引发电气安全事故。"
+            },
+            {
+                question: "管理人员为节省成本，使用不合格的安全防护用品，属于？",
+                options: [
+                    "违章指挥",
+                    "节约成本",
+                    "正常采购",
+                    "创新管理"
+                ],
+                correctAnswer: 0,
+                explanation: "使用不合格的安全防护用品属于违章指挥行为，违反了安全生产投入的规定，直接威胁员工安全。"
+            },
+            {
+                question: "高处作业时不使用坠落防护设备，属于？",
+                options: [
+                    "违章作业",
+                    "勇敢表现",
+                    "经验丰富",
+                    "快速作业"
+                ],
+                correctAnswer: 0,
+                explanation: "高处作业必须使用坠落防护设备，不使用防护设备属于严重的违章作业行为。"
+            },
+            {
+                question: "下列哪种情况不属于违章指挥？",
+                options: [
+                    "发现隐患立即停工整改",
+                    "强令员工冒险作业",
+                    "指挥员工使用不合格设备",
+                    "要求员工简化安全程序"
+                ],
+                correctAnswer: 0,
+                explanation: "发现隐患立即停工整改是遵守安全规定的行为，不属于违章指挥。其他选项都属于违章指挥行为。"
+            },
+            {
+                question: "员工酒后上岗作业，属于？",
+                options: [
+                    "违反劳动纪律",
+                    "正常上岗",
+                    "个人习惯",
+                    "工作需要"
+                ],
+                correctAnswer: 0,
+                explanation: "员工酒后上岗作业属于严重的违反劳动纪律行为，直接影响判断能力和操作准确性，极易导致事故。"
+            },
+            {
+                question: "在未进行安全技术交底的情况下安排新任务，属于？",
+                options: [
+                    "违章指挥",
+                    "正常安排",
+                    "简化流程",
+                    "提高效率"
+                ],
+                correctAnswer: 0,
+                explanation: "安排新任务前必须进行安全技术交底，未交底就安排任务属于违章指挥行为。"
+            },
+            {
+                question: "操作旋转机械时戴手套，属于？",
+                options: [
+                    "违章作业",
+                    "个人防护",
+                    "正常操作",
+                    "保持清洁"
+                ],
+                correctAnswer: 0,
+                explanation: "操作旋转机械时严禁戴手套，戴手套操作属于违章作业行为，容易导致机械伤害事故。"
+            },
+            {
+                question: "下列哪种行为属于违反劳动纪律？",
+                options: [
+                    "工作中嬉戏打闹",
+                    "按时参加班前会",
+                    "按规定穿戴防护用品",
+                    "遵守操作规程"
+                ],
+                correctAnswer: 0,
+                explanation: "工作中嬉戏打闹属于违反劳动纪律行为，分散注意力，容易导致安全事故。"
+            },
+            {
+                question: "要求员工在无监护的情况下进入有限空间作业，属于？",
+                options: [
+                    "违章指挥",
+                    "正常作业",
+                    "简化程序",
+                    "提高效率"
+                ],
+                correctAnswer: 0,
+                explanation: "有限空间作业必须设置监护人员，无监护情况下作业属于严重的违章指挥行为。"
+            },
+            {
+                question: "擅自拆除或停用安全装置、设施，属于？",
+                options: [
+                    "违章作业",
+                    "设备维修",
+                    "正常调整",
+                    "临时措施"
+                ],
+                correctAnswer: 0,
+                explanation: "安全装置、设施必须保持完好有效，擅自拆除或停用属于严重的违章作业行为。"
+            },
+            {
+                question: "管理人员不按规定配备专职安全管理人员，属于？",
+                options: [
+                    "违章指挥",
+                    "人员紧张",
+                    "正常安排",
+                    "节约成本"
+                ],
+                correctAnswer: 0,
+                explanation: "按规定配备专职安全管理人员是法定要求，不按规定配备属于违章指挥行为。"
+            },
+            {
+                question: "下列哪种情况属于违章作业？",
+                options: [
+                    "在禁火区吸烟",
+                    "按规定存放危险品",
+                    "正确使用消防器材",
+                    "保持安全通道畅通"
+                ],
+                correctAnswer: 0,
+                explanation: "在禁火区吸烟属于严重的违章作业行为，极易引发火灾爆炸事故。"
+            },
+            {
+                question: "不按规定组织安全检查，对隐患不整改，属于？",
+                options: [
+                    "违章指挥",
+                    "工作疏忽",
+                    "正常管理",
+                    "简化流程"
+                ],
+                correctAnswer: 0,
+                explanation: "组织安全检查和整改隐患是管理人员的职责，不履行这些职责属于违章指挥行为。"
+            },
+            {
+                question: "下列哪种行为属于违反劳动纪律？",
+                options: [
+                    "无故旷工、迟到早退",
+                    "遵守考勤制度",
+                    "服从工作安排",
+                    "维护设备完好"
+                ],
+                correctAnswer: 0,
+                explanation: "无故旷工、迟到早退属于违反劳动纪律行为，影响正常工作秩序。"
+            },
+            {
+                question: "企业反\"三违\"工作的核心目标是？",
+                options: [
+                    "预防和减少事故，保障员工安全",
+                    "提高生产效率",
+                    "降低生产成本",
+                    "加快工程进度"
+                ],
+                correctAnswer: 0,
+                explanation: "反\"三违\"工作的核心目标是预防和减少事故，保障员工生命安全，这是安全生产的根本目的。"
+            }
+        ];
+        
+        // 初始化变量
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let userAnswers = new Array(questions.length).fill(null);
+        
+        // DOM元素变量声明
+        let startContainer, quizContainer, resultContainer, startBtn, prevBtn, nextBtn, submitBtn, restartBtn;
+        let questionNumber, questionText, optionsContainer, explanation, explanationText;
+        let progressFill, progressText, currentScore, finalScore, resultMessage;
+        let correctCount, wrongCount, accuracyRate;
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取DOM元素
+            startContainer = document.getElementById('startContainer');
+            quizContainer = document.getElementById('quizContainer');
+            resultContainer = document.getElementById('resultContainer');
+            startBtn = document.getElementById('startBtn');
+            prevBtn = document.getElementById('prevBtn');
+            nextBtn = document.getElementById('nextBtn');
+            submitBtn = document.getElementById('submitBtn');
+            restartBtn = document.getElementById('restartBtn');
+            questionNumber = document.getElementById('questionNumber');
+            questionText = document.getElementById('questionText');
+            optionsContainer = document.getElementById('optionsContainer');
+            explanation = document.getElementById('explanation');
+            explanationText = document.getElementById('explanationText');
+            progressFill = document.getElementById('progressFill');
+            progressText = document.getElementById('progressText');
+            currentScore = document.getElementById('currentScore');
+            finalScore = document.getElementById('finalScore');
+            resultMessage = document.getElementById('resultMessage');
+            correctCount = document.getElementById('correctCount');
+            wrongCount = document.getElementById('wrongCount');
+            accuracyRate = document.getElementById('accuracyRate');
+            
+            // 绑定事件
+            startBtn.addEventListener('click', startQuiz);
+            prevBtn.addEventListener('click', goToPrevQuestion);
+            nextBtn.addEventListener('click', goToNextQuestion);
+            submitBtn.addEventListener('click', showResults);
+            restartBtn.addEventListener('click', restartQuiz);
+            
+            // 添加初始动画
+            setTimeout(() => {
+                document.querySelector('.header').style.transform = 'translateY(0)';
+                document.querySelector('.header').style.opacity = '1';
+            }, 100);
+            
+            console.log("页面初始化完成，事件绑定成功");
+        });
+        
+        // 开始测试函数
+        function startQuiz() {
+            console.log("开始测试按钮被点击");
+            startContainer.style.display = 'none';
+            quizContainer.classList.add('active');
+            showQuestion();
+        }
+        
+        // 显示问题函数
+        function showQuestion() {
+            const question = questions[currentQuestionIndex];
+            questionNumber.textContent = `问题 ${currentQuestionIndex + 1}/${questions.length}`;
+            questionText.textContent = question.question;
+            
+            // 更新进度条
+            const progressPercentage = (currentQuestionIndex / questions.length) * 100;
+            progressFill.style.width = `${progressPercentage}%`;
+            progressText.textContent = `${currentQuestionIndex}/${questions.length} 已完成`;
+            
+            // 更新当前得分
+            currentScore.textContent = score;
+            
+            // 清空选项容器
+            optionsContainer.innerHTML = '';
+            
+            // 创建选项
+            question.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.classList.add('option');
+                
+                // 如果用户已经选择了这个选项，标记为选中
+                if (userAnswers[currentQuestionIndex] === index) {
+                    optionElement.classList.add('selected');
+                }
+                
+                // 如果已经回答了这个问题，显示正确答案和错误答案
+                if (userAnswers[currentQuestionIndex] !== null) {
+                    if (index === question.correctAnswer) {
+                        optionElement.classList.add('correct');
+                    } else if (index === userAnswers[currentQuestionIndex] && index !== question.correctAnswer) {
+                        optionElement.classList.add('incorrect');
+                    }
+                }
+                
+                optionElement.innerHTML = `
+                    <div class="option-letter">${String.fromCharCode(65 + index)}</div>
+                    <div class="option-text">${option}</div>
+                `;
+                
+                // 如果问题还未回答，添加点击事件
+                if (userAnswers[currentQuestionIndex] === null) {
+                    optionElement.addEventListener('click', () => selectOption(index));
+                }
+                
+                optionsContainer.appendChild(optionElement);
+            });
+            
+            // 显示或隐藏解析
+            if (userAnswers[currentQuestionIndex] !== null) {
+                explanationText.textContent = question.explanation;
+                explanation.classList.add('show');
+            } else {
+                explanation.classList.remove('show');
+            }
+            
+            // 更新按钮状态
+            prevBtn.disabled = currentQuestionIndex === 0;
+            
+            if (currentQuestionIndex === questions.length - 1) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'flex';
+            } else {
+                nextBtn.style.display = 'flex';
+                submitBtn.style.display = 'none';
+            }
+            
+            // 如果已回答，禁用选项
+            if (userAnswers[currentQuestionIndex] !== null) {
+                const options = document.querySelectorAll('.option');
+                options.forEach(option => {
+                    option.style.cursor = 'default';
+                });
+            }
+        }
+        
+        // 选择选项函数
+        function selectOption(optionIndex) {
+            // 如果已经回答了这个问题，直接返回
+            if (userAnswers[currentQuestionIndex] !== null) return;
+            
+            // 保存用户答案
+            userAnswers[currentQuestionIndex] = optionIndex;
+            
+            // 检查答案是否正确
+            const question = questions[currentQuestionIndex];
+            if (optionIndex === question.correctAnswer) {
+                score++;
+                currentScore.textContent = score;
+            }
+            
+            // 显示解析
+            explanationText.textContent = question.explanation;
+            explanation.classList.add('show');
+            
+            // 更新选项样式
+            const options = document.querySelectorAll('.option');
+            options.forEach((option, index) => {
+                option.classList.remove('selected');
+                
+                if (index === optionIndex) {
+                    option.classList.add('selected');
+                }
+                
+                if (index === question.correctAnswer) {
+                    option.classList.add('correct');
+                } else if (index === optionIndex && index !== question.correctAnswer) {
+                    option.classList.add('incorrect');
+                }
+                
+                // 禁用点击
+                option.style.cursor = 'default';
+            });
+            
+            // 更新进度条
+            const progressPercentage = ((currentQuestionIndex + 1) / questions.length) * 100;
+            progressFill.style.width = `${progressPercentage}%`;
+            progressText.textContent = `${currentQuestionIndex + 1}/${questions.length} 已完成`;
+        }
+        
+        // 上一题函数
+        function goToPrevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                showQuestion();
+            }
+        }
+        
+        // 下一题函数
+        function goToNextQuestion() {
+            if (currentQuestionIndex < questions.length - 1) {
+                currentQuestionIndex++;
+                showQuestion();
+            }
+        }
+        
+        // 显示结果函数
+        function showResults() {
+            quizContainer.classList.remove('active');
+            resultContainer.classList.add('show');
+            
+            // 计算最终得分
+            const percentage = Math.round((score / questions.length) * 100);
+            finalScore.textContent = `${score}/${questions.length}`;
+            
+            // 更新详细结果
+            correctCount.textContent = `${score} 题`;
+            wrongCount.textContent = `${questions.length - score} 题`;
+            accuracyRate.textContent = `${percentage}%`;
+            
+            // 根据得分显示不同的消息
+            let message = "";
+            if (percentage >= 90) {
+                message = "优秀！您对反'三违'安全知识掌握得非常全面，具备出色的安全意识和知识储备。";
+            } else if (percentage >= 80) {
+                message = "良好！您对反'三违'安全知识有较好的了解，能够识别大部分违章行为。";
+            } else if (percentage >= 70) {
+                message = "合格！您了解基本的反'三违'安全知识，建议进一步学习相关安全规程。";
+            } else if (percentage >= 60) {
+                message = "基本合格！您对反'三违'有一定了解，但需要加强学习，提高安全意识。";
+            } else {
+                message = "需要加强！建议您系统学习反'三违'安全知识，增强安全意识，杜绝违章行为。";
+            }
+            
+            resultMessage.textContent = message;
+        }
+        
+        // 重新开始测试函数
+        function restartQuiz() {
+            // 重置变量
+            currentQuestionIndex = 0;
+            score = 0;
+            userAnswers = new Array(questions.length).fill(null);
+            
+            // 重置UI
+            resultContainer.classList.remove('show');
+            startContainer.style.display = 'block';
+            currentScore.textContent = '0';
+            progressFill.style.width = '0%';
+            progressText.textContent = '0/30 已完成';
+            
+            // 重置按钮
+            nextBtn.style.display = 'flex';
+            submitBtn.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
